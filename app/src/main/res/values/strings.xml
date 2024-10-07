@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Spam Call Blocker</string>
+    <string name="start_service_text">Start Service</string>
+    <string name="enter_phone_number_to_block">Enter phone number to block</string>
+    <string name="add_to_block_list">Add to Block List</string>
+    <string name="start_service">Start Service</string>
+</resources>
