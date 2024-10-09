@@ -10,11 +10,12 @@ import android.content.SharedPreferences;
 import android.telecom.TelecomManager;
 import android.telephony.TelephonyManager;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class PhoneCallReceiver extends BroadcastReceiver {
-    private static final String TAG = "PhoneCallReceiver";
 
     @SuppressLint("UnsafeProtectedBroadcastReceiver")
     @Override
@@ -27,7 +28,11 @@ public class PhoneCallReceiver extends BroadcastReceiver {
         if (TelephonyManager.EXTRA_STATE_RINGING.equals(state)) {
 
             if(incomingNumber!=null){
-                if(incomingNumber.startsWith("020") || incomingNumber.startsWith("0700")){
+                if(incomingNumber.startsWith("020") || incomingNumber.startsWith("0700") ||
+                        incomingNumber.startsWith("7080642") ||
+                        incomingNumber.startsWith("07080642") ||
+                        incomingNumber.startsWith("+23407080642") ||
+                        incomingNumber.startsWith("23407080642")){
                     endCall(context);
                 }else{
                     for (String blackListedPhone:blockList) {
