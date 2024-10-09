@@ -1,5 +1,6 @@
 package com.tools.spamblocker;
 
+import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -72,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.READ_PHONE_STATE},
+                    PERMISSION_REQUEST_CODE);
+        }
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_CALL_LOG)
+                != PackageManager.PERMISSION_GRANTED) {
+            // Request the permission if it hasn't been granted
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.WRITE_CALL_LOG},
                     PERMISSION_REQUEST_CODE);
         }
 
